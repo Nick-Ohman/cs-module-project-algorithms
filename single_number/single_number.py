@@ -2,11 +2,23 @@
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
+## we need to find the duplcates and pop them off the list
+
 def single_number(arr):
     # Your code here
-
-    pass
-
+    # loop thru array
+    # for i in range(length):
+    while len(arr) > 1:
+        # pop out the last number
+        odd = arr.pop(-1)
+        # check if that number is still in the array
+        if odd not in arr:
+            # if not return it
+            return odd
+        # now remove the non-oddity, or else we'll get a false-positive
+        else:
+            arr.remove(odd)
+    
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
